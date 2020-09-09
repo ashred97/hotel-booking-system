@@ -1,11 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
-</head>
-<body>
-    <p>LOGIN</p>
-</body>
+  </head>
+  <body>
+    <form>
+      <div>
+        <label for="Username">Username:</label>
+        <input
+          type="text"
+          id="username"
+          name="Username"
+          placeholder="Enter Username"
+          required
+          autocomplete="off"
+        />
+      </div>
+      <div>
+        <label for="Password">Password:</label>
+        <input
+          type="password"
+          id="password"
+          name="Password"
+          placeholder="Enter Password"
+          autocomplete="off"
+          required
+        />
+      </div>
+
+      <input type="submit" value="Login" id="myBtn" />
+    </form>
+    <script>
+      document.querySelector("form").addEventListener("submit", handleSubmit);
+      function handleSubmit(e) {
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        if (username !== "" && password !== "") {
+          location.href = "index.html";
+        }
+        e.preventDefault();
+      }
+    </script>
+  </body>
 </html>
